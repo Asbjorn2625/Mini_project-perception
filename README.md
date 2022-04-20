@@ -1,4 +1,4 @@
-# Mini project for perception
+# Mini project for perception 😂
 Fruit classifier made for school purpose
 
 ## Requirments
