@@ -37,13 +37,13 @@ fruitInterval = [applePlace, pearPlace, orangePlace]
 show3dplot = 0
 if show3dplot == 1:
     # Creating figure
-    fig = plt.figure("your mom")
+    fig = plt.figure("3D plot")
     ax = plt.axes(projection="3d")
     # Creating plot
     ax.scatter3D(Apple.redmean, Apple.greenmean, Apple.circularity, color="green")
     ax.scatter3D(Pear.redmean, Pear.greenmean, Pear.circularity, color="yellow")
     ax.scatter3D(Orange.redmean, Orange.greenmean, Orange.circularity, color="orange")
-    plt.title("simple 3D scatter plot")
+    plt.title("Feautures used for classification")
     ax.set_xlabel('Red intensity', fontweight ='bold')
     ax.set_ylabel('Green intensity', fontweight ='bold')
     ax.set_zlabel('Circularity', fontweight ='bold')
@@ -94,20 +94,23 @@ if showPlot == 1:
     plt.show()
 
 AppleTrain = FruitClass()
-AppleTrain.lists(fruit[0], 32, 41,"noshow")
+AppleTrain.lists(fruit[0], 32, 50, "noshow")
 AppleTrainsize = len(AppleTrain.extent)
 
 PearTrain = FruitClass()
-PearTrain.lists(fruit[1], 32, 41,"noshow")
+PearTrain.lists(fruit[1], 32, 42, "noshow")
 Peartrainsize = len(PearTrain.extent)
 
 OrangeTrain = FruitClass()
-OrangeTrain.lists(fruit[2], 32, 41,"noshow")
+OrangeTrain.lists(fruit[2], 32, 52, "noshow")
 Orangetrainsize = len(OrangeTrain.extent)
 
 print("test of apples")
-testing(3, redmean, greenmean, circularity, AppleTrain.redmean, AppleTrain.greenmean, AppleTrain.circularity, AppleTrainsize,  fruit, fruitInterval)
+testing(3, redmean, greenmean, circularity, AppleTrain.redmean, AppleTrain.greenmean, AppleTrain.circularity,
+        AppleTrainsize,  fruit, fruitInterval)
 print("test of oranges")
-testing(3, redmean, greenmean, circularity, OrangeTrain.redmean, OrangeTrain.meanint, OrangeTrain.circularity, Orangetrainsize, fruit, fruitInterval)
+testing(3, redmean, greenmean, circularity, OrangeTrain.redmean, OrangeTrain.meanint, OrangeTrain.circularity,
+        Orangetrainsize, fruit, fruitInterval)
 print("test of pears")
-testing(3, redmean, greenmean, circularity,  PearTrain.redmean, PearTrain.greenmean, PearTrain.circularity, Peartrainsize, fruit, fruitInterval)
+testing(3, redmean, greenmean, circularity,  PearTrain.redmean, PearTrain.greenmean, PearTrain.circularity,
+        Peartrainsize, fruit, fruitInterval)
